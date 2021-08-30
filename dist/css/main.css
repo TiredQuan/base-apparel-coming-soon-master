@@ -57,12 +57,19 @@ body {
   height: 50px;
 }
 
-.email input {
+input {
   height: 46px;
   width: 260px;
   border-radius: 20px 0 0 20px;
   border: 1px solid #ce9797;
-  z-index: -1;
+  background-color: #fff5f5;
+  color: #ce9797;
+  padding: 0 20px;
+}
+
+input:focus {
+  border: 2px solid #ce9797;
+  outline: none;
 }
 
 button {
