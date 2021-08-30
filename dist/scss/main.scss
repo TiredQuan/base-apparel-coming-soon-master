@@ -5,3 +5,55 @@
 
 @import 'base/reset';
 @import 'base/typography';
+#logo {
+    margin: 25px 30px;
+}
+#hero {
+    background: url(../../images/hero-mobile.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+    height: 66.667vw;
+}
+.intro{
+    text-align: center;
+    h1 {
+        font-size: $font-size*3;
+        font-weight: map-get($weights , thin );
+        text-transform: uppercase;
+        margin: 70px 50px 20px 50px;
+        line-height: 1.1;
+        letter-spacing: 10px;
+    }
+    
+    span{
+        color: $dark-grayish-red;
+        font-weight: map-get($weights , bold );
+    }
+    p {
+        font-weight: map-get($weights , regular );
+        margin: 16px 20px;
+    }
+}
+.email{
+    margin: auto;
+    width: 80vw;
+    height: 50px;
+    input {
+        height: 46px;
+        width: 260px;
+        border-radius: 20px 0 0 20px;
+        border: 1px solid $desaturated-red;
+        z-index: -1;
+    }
+}
+button{
+    right: 35px;
+    position: absolute;
+    height: 46px;
+    width: 64px;
+    border-radius: 30px;
+    border: none;
+    background:linear-gradient($pink-to-dark) ;
+}

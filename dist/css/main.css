@@ -1,1 +1,77 @@
-/* No CSS *//*# sourceMappingURL=main.css.map */
+*, *::before, *::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Josefin Sans', sans-serif;
+  background: linear-gradient(135deg, white 28%, #fff5f5 67%);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+  color: #ce9797;
+}
+
+#logo {
+  margin: 25px 30px;
+}
+
+#hero {
+  background: url(../../images/hero-mobile.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100vw;
+  height: 66.667vw;
+}
+
+.intro {
+  text-align: center;
+}
+
+.intro h1 {
+  font-size: 3rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  margin: 70px 50px 20px 50px;
+  line-height: 1.1;
+  letter-spacing: 10px;
+}
+
+.intro span {
+  color: #413a3a;
+  font-weight: 600;
+}
+
+.intro p {
+  font-weight: 400;
+  margin: 16px 20px;
+}
+
+.email {
+  margin: auto;
+  width: 80vw;
+  height: 50px;
+}
+
+.email input {
+  height: 46px;
+  width: 260px;
+  border-radius: 20px 0 0 20px;
+  border: 1px solid #ce9797;
+  z-index: -1;
+}
+
+button {
+  right: 35px;
+  position: absolute;
+  height: 46px;
+  width: 64px;
+  border-radius: 30px;
+  border: none;
+  background: linear-gradient(135deg, #f8bfbf 28%, #ee8c8c 73%);
+}
+/*# sourceMappingURL=main.css.map */
