@@ -10,13 +10,34 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100vh;
-  width: 100vw;
   color: #ce9797;
+}
+
+@media screen and (min-width: 900px) {
+  #container {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 60% 1fr;
+        grid-template-columns: 60% 1fr;
+    -ms-grid-rows: 1fr 4fr;
+        grid-template-rows: 1fr 4fr;
+        grid-template-areas: "logo hero" "section hero";
+  }
 }
 
 #logo {
   margin: 25px 30px;
+  width: 100px;
+  height: 22px;
+}
+
+@media screen and (min-width: 900px) {
+  #logo {
+    grid-area: logo;
+    width: 158px;
+    height: 32px;
+    margin: 50px 10.417vw;
+  }
 }
 
 #hero {
@@ -28,6 +49,24 @@ body {
   height: 66.667vw;
 }
 
+@media screen and (min-width: 900px) {
+  #hero {
+    background: url(../../images/hero-desktop.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 42.361vw;
+    grid-area: hero;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  section {
+    margin: 0px 250px 0 10.417vw;
+  }
+}
+
 .intro {
   text-align: center;
 }
@@ -36,9 +75,17 @@ body {
   font-size: 3rem;
   font-weight: 300;
   text-transform: uppercase;
-  margin: 70px 50px 20px 50px;
+  margin: 70px auto 20px auto;
+  width: 275px;
   line-height: 1.1;
   letter-spacing: 10px;
+}
+
+@media screen and (min-width: 900px) {
+  .intro h1 {
+    margin: 0;
+    font-size: 4rem;
+  }
 }
 
 .intro span {
@@ -51,20 +98,61 @@ body {
   margin: 16px 20px;
 }
 
-.email {
+@media screen and (min-width: 900px) {
+  .intro p {
+    margin: 16px 0 48px 0;
+    line-height: 1.5;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .intro {
+    grid-area: section;
+    text-align: left;
+    width: 440px;
+  }
+}
+
+#email {
   margin: auto;
   width: 80vw;
   height: 50px;
+  position: relative;
 }
 
 input {
   height: 46px;
-  width: 260px;
+  width: 70vw;
   border-radius: 20px 0 0 20px;
   border: 1px solid #ce9797;
   background-color: #fff5f5;
   color: #ce9797;
   padding: 0 20px;
+}
+
+@media screen and (min-width: 900px) {
+  input {
+    background-color: #FFFEFE;
+    width: 375px;
+    height: 56px;
+    border-radius: 30px 0 0 30px;
+  }
+}
+
+input::-webkit-input-placeholder {
+  color: #ce9797;
+}
+
+input:-ms-input-placeholder {
+  color: #ce9797;
+}
+
+input::-ms-input-placeholder {
+  color: #ce9797;
+}
+
+input::placeholder {
+  color: #ce9797;
 }
 
 input:focus {
@@ -73,12 +161,65 @@ input:focus {
 }
 
 button {
-  right: 35px;
+  left: 64vw;
   position: absolute;
   height: 46px;
-  width: 64px;
+  width: 80px;
   border-radius: 30px;
   border: none;
-  background: linear-gradient(135deg, #f8bfbf 28%, #ee8c8c 73%);
+  background-color: #ee8c8c;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+@media screen and (min-width: 900px) {
+  button {
+    height: 56px;
+    width: 100px;
+    left: 345px;
+  }
+}
+
+button:hover {
+  -webkit-box-shadow: 0px 15px 15px -4px rgba(30, 30, 60, 0.3);
+          box-shadow: 0px 15px 15px -4px rgba(30, 30, 60, 0.3);
+  background: #f8bfbf;
+  cursor: pointer;
+}
+
+.icon-error {
+  left: 56vw;
+  top: 10px;
+  display: none;
+  position: absolute;
+}
+
+@media screen and (min-width: 900px) {
+  .icon-error {
+    top: 16px;
+    left: 300px;
+  }
+}
+
+.icon-show {
+  display: inline;
+}
+
+.error {
+  border: 2px solid #FC6461;
+}
+
+.error:focus {
+  border: 2px solid #FC6461;
+}
+
+.error-message {
+  position: absolute;
+  color: #FC6461;
+  font-size: 0.90909rem;
+  margin: 16px 20px;
+  display: none;
+  left: 0;
+  top: 55px;
 }
 /*# sourceMappingURL=main.css.map */

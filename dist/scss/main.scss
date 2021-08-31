@@ -5,8 +5,26 @@
 
 @import 'base/reset';
 @import 'base/typography';
+#container{
+    @media screen and(min-width:$desktop) {
+        display: grid;
+        grid-template-columns: 60% 1fr;
+        grid-template-rows: 1fr 4fr;
+        grid-template-areas: 
+        "logo hero"
+        "section hero";
+    }
+}
 #logo {
     margin: 25px 30px;
+    width:100px; 
+    height:22px;
+    @media screen and(min-width:$desktop) {
+        grid-area: logo ;
+        width: 158px;
+        height: 32px;
+        margin: 50px 10.417vw;
+    }
 }
 #hero {
     background: url(../../images/hero-mobile.jpg);
@@ -15,6 +33,21 @@
     background-size: cover;
     width: 100vw;
     height: 66.667vw;
+    @media  screen and (min-width: $desktop)
+    {
+        background: url(../../images/hero-desktop.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100vh;
+        width: 42.361vw;
+        grid-area: hero;
+    }
+}
+section {
+    @media screen and(min-width:$desktop) {
+        margin: 0px 250px 0 10.417vw;
+    }
 }
 .intro{
     text-align: center;
@@ -22,9 +55,14 @@
         font-size: $font-size*3;
         font-weight: map-get($weights , thin );
         text-transform: uppercase;
-        margin: 70px 50px 20px 50px;
+        margin: 70px auto 20px auto;
+        width: 275px;
         line-height: 1.1;
         letter-spacing: 10px;
+        @media screen and(min-width:$desktop) {
+            margin: 0;
+            font-size: $font-size*4;
+        }
     }
     
     span{
@@ -34,32 +72,90 @@
     p {
         font-weight: map-get($weights , regular );
         margin: 16px 20px;
+        @media screen and(min-width:$desktop) {
+            margin: 16px 0 48px 0;
+            line-height: 1.5;
+        }
+    }
+    @media screen and(min-width:$desktop) {
+        grid-area: section;
+        text-align: left;
+        width: 440px;
     }
 }
-.email{
+#email{
     margin: auto;
     width: 80vw;
     height: 50px;
+    position:relative;
 }
 input {
     height: 46px;
-    width: 260px;
+    width: 70vw;
     border-radius: 20px 0 0 20px;
     border: 1px solid $desaturated-red;
     background-color: rgba(255,245,245,1);
     color: $desaturated-red;
     padding: 0 20px;
+    @media screen and(min-width:$desktop) {
+        background-color:#FFFEFE;
+        width: 375px;
+        height: 56px;
+        border-radius: 30px 0 0 30px;
+    }
+}
+input::placeholder{
+    color: $desaturated-red;
 }
 input:focus {
     border: 2px solid $desaturated-red;
     outline: none;
 }
 button{
-    right: 35px;
+    left: 64vw;
     position: absolute;
     height: 46px;
-    width: 64px;
+    width: 80px;
     border-radius: 30px;
     border: none;
-    background:linear-gradient($pink-to-dark) ;
+    background-color:rgba(238,140,140,1) ;
+    transition: 0.2s;
+    @media screen and(min-width:$desktop) {
+        height: 56px;
+        width: 100px;
+        left: 345px;
+    }
+}
+button:hover{
+    box-shadow: 0px 15px 15px -4px rgba(30, 30, 60, 0.3);
+    background: rgba(248,191,191,1);
+    cursor: pointer;
+}
+.icon-error {
+    left: 56vw;
+    top:10px;
+    display: none;
+    position: absolute;
+    @media screen and(min-width:$desktop) {
+    top: 16px;
+    left: 300px;
+    }
+}
+.icon-show {
+    display: inline;
+}
+.error {
+    border: 2px solid #FC6461;
+}
+.error:focus {
+    border: 2px solid #FC6461;
+}
+.error-message {
+    position: absolute;
+    color: #FC6461;
+    font-size: $font-size/1.1;
+    margin: 16px 20px;
+    display: none;
+    left: 0;
+    top : 55px;
 }
